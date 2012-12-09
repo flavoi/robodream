@@ -1,0 +1,17 @@
+<package>
+  <description brief="Dream">
+
+     Dream, wrapper di roboearth per la tesi Roboearth.
+
+  </description>
+  <author>Flavio Marcato</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/Dream</url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+
+</package>
+
+
