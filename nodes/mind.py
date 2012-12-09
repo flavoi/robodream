@@ -12,7 +12,6 @@ import roslib; roslib.load_manifest('Dream')
 import rospy
 import yaml, sys, os
 from std_msgs.msg import String
-from Dream.srv import *
 from action_utils import *
 from colors import *
 from connector import connect_to_roboearth
@@ -68,17 +67,11 @@ def mainCallback(data):
         pub.publish(response)
         rospy.sleep(1)
 
-# 
-def handle_action_request(data):
-    print "+ handle action request"
-    return mindResponse(data.data)
-
 """ Inizializzazione del nodo e apertura messaggi """
 def dream():
     rospy.init_node('mind', anonymous=True)
     rospy.Subscriber("manager_response", String, managerCallback)
     rospy.Subscriber("action_request", String, mainCallback)
-    s = rospy.Service('dream_server', mind, handle_action_request)
     print "\nDream server has started.\n-------------------------\n"
     rospy.spin()
 
